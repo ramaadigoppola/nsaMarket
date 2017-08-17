@@ -1,0 +1,107 @@
+<mvc:View controllerName="nfa.general.controller.Detail" id="detailsView" 
+xmlns="sap.m" xmlns:l="sap.ui.layout"
+xmlns:f="sap.ui.layout.form"
+xmlns:core="sap.ui.core" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:semantic="sap.m.semantic">
+	<semantic:DetailPage id="DetailPage" showNavButton="true" navButtonPress="onNavButtonPress" title="General _NFA">
+		<semantic:positiveAction>
+			<semantic:PositiveAction id="approveButton" text="Approve" press="onApprove"/>
+		</semantic:positiveAction>
+		<semantic:negativeAction>
+			<semantic:NegativeAction id="rejectButton" text="Reject" press="onReject"/>
+		</semantic:negativeAction>
+		<semantic:content>
+			<ObjectHeader id="headerId" title="REG NO :000000111" responsive="true">
+				<firstStatus>
+					<ObjectStatus id="requestTypeId" text="REQUEST TYPE"/>
+				</firstStatus>
+				<attributes>
+					<ObjectAttribute text="Customer Name"/>
+					<ObjectAttribute text=" DATE : 7/27/2017"/>
+				</attributes>
+			</ObjectHeader>
+			<IconTabBar select="onDetailSelect" id="idIconTabBar">
+				<items>
+					<!--    REQUEST DETAILS TAB BAR-->
+					<IconTabFilter key="requestDetails" icon="sap-icon://request">
+						<content>
+							<f:SimpleForm 
+							id="requestDetailForm" 
+							title="REQUESTER DETAILS"  
+							maxContainerCols="2" 
+							editable="false"
+                            layout="ResponsiveLayout">
+								<f:content>
+									<Label text="LEVEL:"/>
+									<Text text="Select"/>
+									<Label text="REQUEST NUMBER:"/>
+									<Text text="General NFA"/>
+									<Label text="EMPLOYEE NUMBER:"/>
+									<Text text="System"/>
+									<Label text="LOGGED BY:"/>
+									<Text text="System Account"/>
+									<Label text="DATE:"/>
+									<Text text="26/07/2017 14:31:49"/>
+									<Label text="CATEGORY:"/>
+									<Text text="Select"/>
+									<Label text="ORIGINATOR:"/>
+									<Text text="System Account"/>
+									<Label text="REFERENCE NUMBER:"/>
+									<Text text="HZLSP ADMIN"/>
+								</f:content>
+							</f:SimpleForm>
+						</content>
+					</IconTabFilter>
+					<!--    BANK DETAILS TAB BAR-->
+					<IconTabFilter key="bankDetails" icon="sap-icon://request">
+						<content>
+							<f:SimpleForm 
+							id="bankDetailForm" 
+							title="DETAILS OF REQUEST"  
+							maxContainerCols="2" 
+							editable="false"
+                            layout="ResponsiveLayout">
+								<f:content>
+									<Label text="LOCATION:"/>
+									<Text text="Pune"/>
+									<Label text="UNIT:"/>
+									<Text text="unit wise"/>
+									<Label text="SBU:"/>
+									<Text text="SAVINGS"/>
+									<Label text="FUNCTION:"/>
+									<Text text="Select"/>
+									<Label text="TOTAL COST(IN INR):"/>
+									<Text text="IN INR"/>
+									<Label text="COMPLETION DATE:"/>
+									<Text text="10-08-2017"/>
+								</f:content>
+							</f:SimpleForm>
+						</content>
+					</IconTabFilter>
+					<!--  Approval Details Tab Bar-->
+					<IconTabFilter key="attachments" icon="sap-icon://attachment">
+						<content>
+							<f:SimpleForm 
+							id="approvalDetailForm" 
+							title="Attachments"  
+							maxContainerCols="2" 
+							editable="false"
+                            layout="ResponsiveLayout">
+								<f:content>
+									<Label text="SUBJECT:"/>
+									<Text text="Propose of subject"/>
+									<Label text="PERSONAL DETAILS:"/>
+									<Text text="Details"/>
+								</f:content>
+						</f:SimpleForm>
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</semantic:content>
+		<semantic:customFooterContent>
+				<Button text = "Request Change" type = "Emphasized" press = "onRequestPressed"/>
+				</semantic:customFooterContent>
+	</semantic:DetailPage>
+</mvc:View>

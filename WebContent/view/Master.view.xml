@@ -1,0 +1,56 @@
+<mvc:View 
+      controllerName="nfa.general.controller.Master" displayBlock="true" 
+       xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+        xmlns:semantic="sap.m.semantic">
+        
+     <semantic:MasterPage 
+         id="masterPage" 
+             navButtonPress="onNavButtonPress" 
+              showNavButton="true" 
+                     title="Bank Details">
+ 
+        <semantic:subHeader>
+              <Bar id="master1SearchBar">
+            <contentMiddle>
+              <SearchField 
+                id="master1SearchField" 
+                 showRefreshButton="true" 
+                  placeholder="Enter Request Number/Request Type to search" 
+                   search="onSearch"
+                   tooltip="{i18n>master1SearchTooltip}" 
+                       width="100%">
+                      </SearchField>
+                     </contentMiddle>
+                  </Bar>
+              </semantic:subHeader>
+            <semantic:content>
+       <List 
+               id="master1List" 
+              mode="SingleSelectMaster" 
+              noDataText="No Requested Details" 
+              select="onPress">
+              
+                <items>
+                   <ObjectListItem 
+                   id="master1ListItem" 
+                     type="Active" 
+                      press="onPress" 
+                      title="REG NO : 000000111">
+                          
+                         <firstStatus>
+                          <ObjectStatus 
+                         id="requestTypeId" 
+                         text="Request type"/>
+                         </firstStatus>
+                         
+                           <attributes>
+                          <ObjectAttribute text="Customer Name"/>
+                         <ObjectAttribute text="DATE : 7/27/2017"/>
+                        </attributes>
+                    </ObjectListItem>
+                 </items>
+               </List>
+           </semantic:content>
+         <semantic:customFooterContent></semantic:customFooterContent>
+    </semantic:MasterPage>
+</mvc:View>

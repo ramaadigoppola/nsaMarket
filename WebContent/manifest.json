@@ -1,0 +1,85 @@
+{
+  "_version": "1.1.0",
+  "sap.app": {
+	"_version": "1.1.0",
+	"id": "nfa.general",
+	"type": "application",
+	"i18n": "i18n/i18n.properties",
+	"title": "{{appTitle}}",
+	"description": "{{appDescription}}",
+	"applicationVersion": {
+	  "version": "1.0.0"
+	},
+	"ach": "CA-UI5-DOC"
+  },
+  "sap.ui": {
+	"_version": "1.1.0",
+	"technology": "UI5",
+	"deviceTypes": {
+	  "desktop": true,
+	  "tablet": true,
+	  "phone": true
+	},
+	"supportedThemes": [
+	  "sap_bluecrystal"
+	]
+  },
+  "sap.ui5": {
+	"_version": "1.1.0",
+	"rootView": "nfa.general.view.App",
+	"dependencies": {
+	  "minUI5Version": "1.30",
+	  "libs": {
+		"sap.m": {}
+	  }
+	},
+	"config": {
+	  "invoiceLocal": "/Invoices.json"
+	},
+	"models": {
+	  "i18n": {
+		"type": "sap.ui.model.resource.ResourceModel",
+		"settings": {
+		  "bundleName": "nfa.General.i18n.i18n"
+		}
+	  }
+	},
+
+	"routing": {
+	  "config": {
+		"routerClass": "sap.m.routing.Router",
+		"viewType": "XML",
+		"viewPath": "nfa.general.view",
+		"controlId": "app",
+		"controlAggregation": "pages"
+	  },
+	  "routes": [
+		{
+		  "pattern": "",
+		  "name": "master",
+		  "target": "master"
+		},
+		{
+		  "pattern": "detail",
+		  "name": "detail",
+		  "target": "detail"
+		}
+	  ],
+	  "targets": {
+		"overview": {
+		  "viewName": "Master",
+		  "controlAggregation": "masterPages"
+		},
+		"detail": {
+		  "viewName": "Detail",
+		  "controlAggregation": "detailPages"
+		},
+		"welcome": {
+			"viewName": "Welcome",
+			"controlAggregation": "detailPages"
+		}
+	  }
+	}
+	
+  }
+}
